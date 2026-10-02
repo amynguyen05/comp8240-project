@@ -4,3 +4,4 @@ datasets/
 FASTopic/
 *.npy
 __pycache__/
+palmetto/

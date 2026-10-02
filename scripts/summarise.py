@@ -1,11 +1,27 @@
+from pathlib import Path
+
 import pandas as pd
 
 PAPER = {
-    "20NG": {"TD": 0.981, "Purity": 0.570, "NMI": 0.522, "Acc": 0.604, "F1": 0.593},
-    "NYT": {"TD": 0.999, "Purity": 0.662, "NMI": 0.369, "Acc": 0.754, "F1": 0.596},
-    "NeurIPS": {"TD": 0.996},
-    "ACL": {"TD": 0.997},
-    "Wikitext-103": {"TD": 0.992},
+    "20NG": {
+        "CV": 0.412,
+        "TD": 0.981,
+        "Purity": 0.570,
+        "NMI": 0.522,
+        "Acc": 0.604,
+        "F1": 0.593,
+    },
+    "NYT": {
+        "CV": 0.437,
+        "TD": 0.999,
+        "Purity": 0.662,
+        "NMI": 0.369,
+        "Acc": 0.754,
+        "F1": 0.596,
+    },
+    "NeurIPS": {"CV": 0.420, "TD": 0.996},
+    "ACL": {"CV": 0.413, "TD": 0.997},
+    "Wikitext-103": {"CV": 0.439, "TD": 0.992},
 }
 PAPER_CPU_S = {
     "20NG": 95.93,
@@ -14,16 +30,28 @@ PAPER_CPU_S = {
     "ACL": 209.75,
     "Wikitext-103": 552.70,
 }
-METRICS = ["TD", "Purity", "NMI", "Acc", "F1"]
+METRICS = ["CV", "TD", "Purity", "NMI", "Acc", "F1"]
 
-df = pd.read_csv("results/fastopic_original.csv")
-df = df[df["K"] == 50]
-df = df.drop_duplicates(subset=["dataset", "K", "seed"], keep="first")
+raw = pd.read_csv("results/fastopic_original.csv")
+raw = raw[raw["K"] == 50]
+embed_s = raw.groupby("dataset")[
+    "embed_s"
+].max()  # from whichever run computed embeddings
+df = raw.drop_duplicates(subset=["dataset", "K", "seed"], keep="first")
+
+cv_path = Path("results/cv_palmetto.csv")
+if cv_path.exists():
+    cv = pd.read_csv(cv_path).drop_duplicates(
+        subset=["dataset", "K", "seed"], keep="last"
+    )
+    df = df.merge(cv, on=["dataset", "K", "seed"], how="left")
+else:
+    df["CV"] = None
 
 rows = []
 for name, group in df.groupby("dataset", sort=False):
     for m in METRICS:
-        values = group[m].dropna()
+        values = pd.to_numeric(group[m], errors="coerce").dropna()
         if values.empty:
             continue
         paper = PAPER.get(name, {}).get(m)
@@ -39,8 +67,7 @@ for name, group in df.groupby("dataset", sort=False):
             }
         )
 
-    # Embedding time is only recorded on the first seed; apply it to every seed.
-    total = group["train_s"] + group["embed_s"].max()
+    total = group["train_s"] + embed_s[name]
     rows.append(
         {
             "dataset": name,
