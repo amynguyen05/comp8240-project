@@ -18,6 +18,7 @@ METRICS = ["TD", "Purity", "NMI", "Acc", "F1"]
 
 df = pd.read_csv("results/fastopic_original.csv")
 df = df[df["K"] == 50]
+df = df.drop_duplicates(subset=["dataset", "K", "seed"], keep="first")
 
 rows = []
 for name, group in df.groupby("dataset", sort=False):

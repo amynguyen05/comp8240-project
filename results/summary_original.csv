@@ -13,7 +13,7 @@ NYT,F1,0.596,0.59,0.005,-0.006,5
 NYT,"time_s (CPU, embed+train)",112.96,100.0,2.1,-13.0,5
 NeurIPS,TD,0.996,0.999,0.001,0.003,5
 NeurIPS,"time_s (CPU, embed+train)",177.58,124.9,1.2,-52.7,5
-ACL,TD,0.997,0.998,0.002,0.001,10
-ACL,"time_s (CPU, embed+train)",209.75,165.5,3.3,-44.2,10
+ACL,TD,0.997,0.998,0.002,0.001,5
+ACL,"time_s (CPU, embed+train)",209.75,167.1,3.1,-42.6,5
 Wikitext-103,TD,0.992,0.998,0.002,0.006,5
 Wikitext-103,"time_s (CPU, embed+train)",552.7,963.9,82.4,411.2,5
