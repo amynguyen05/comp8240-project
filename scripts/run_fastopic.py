@@ -55,6 +55,7 @@ def main():
     parser.add_argument("--k", type=int, default=50)
     parser.add_argument("--seeds", type=int, nargs="+", default=[0, 1, 2, 3, 4])
     parser.add_argument("--epochs", type=int, default=200)
+    parser.add_argument("--out", default="results/fastopic_original.csv")
     args = parser.parse_args()
 
     data = load(args.dataset)
@@ -70,7 +71,7 @@ def main():
 
     topwords_dir = RESULTS_DIR / "topwords"
     topwords_dir.mkdir(parents=True, exist_ok=True)
-    out_csv = RESULTS_DIR / "fastopic_original.csv"
+    out_csv = Path(args.out)
     new_file = not out_csv.exists()
 
     for seed in args.seeds:
