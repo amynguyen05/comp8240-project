@@ -1,0 +1,6 @@
+step,docs
+raw reviews collected,4837
+films with exactly one of the six genres,3685
+after removing duplicates,3681
+after minimum length (30 words),3210
+after keeping English only,3206

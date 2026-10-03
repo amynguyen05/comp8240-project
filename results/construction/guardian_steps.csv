@@ -1,0 +1,7 @@
+step,docs
+raw articles collected,13616
+in the six chosen labels,13104
+after removing duplicates,13099
+after removing roundups / quizzes,12272
+after minimum length (150 words),12252
+after capping at 1500 per label,7306
