@@ -4,7 +4,7 @@ import pandas as pd
 
 METRICS = ["CV", "TD", "Purity", "NMI", "Acc", "F1", "train_s"]
 
-raw = pd.read_csv("results/fastopic_new.csv")
+raw = pd.read_csv("results/fastopic_existing.csv")
 raw = raw[raw["K"] == 50]
 embed_s = raw.groupby("dataset")["embed_s"].max()
 df = raw.drop_duplicates(subset=["dataset", "K", "seed"], keep="first")
@@ -30,4 +30,4 @@ for name, group in df.groupby("dataset", sort=False):
 
 table = pd.DataFrame(rows)
 print(table.to_string(index=False))
-table.to_csv("results/summary_new.csv", index=False)
+table.to_csv("results/summary_existing.csv", index=False)

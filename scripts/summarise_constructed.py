@@ -2,7 +2,7 @@ from pathlib import Path
 
 import pandas as pd
 
-FILES = ["results/fastopic_guardian.csv", "results/fastopic_tmdb.csv"]
+FILES = ["results/fastopic_constructed.csv"]
 METRICS = ["CV", "TD", "Purity", "NMI", "Acc", "F1", "train_s"]
 
 raw = pd.concat([pd.read_csv(f) for f in FILES if Path(f).exists()])
