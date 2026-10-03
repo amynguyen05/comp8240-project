@@ -1,0 +1,10 @@
+learning state model time policy value function action states reward distribution markov sequence control task
+image training images model recognition object features using models trained deep feature layer learning objects
+learning set training classification data examples number one class two using label problem based prediction
+neurons neuron response time spike activity temporal neural cells stimulus visual cell model brain input
+distance points kernel metric data similarity structure vectors embedding kernels feature local manifold nearest dataset
+algorithm set number function one problem given using probability also learning data model error time
+algorithm bound function optimal problem algorithms optimization convex theorem let loss problems functions gradient bounds
+network model neural networks input figure time two output one system hidden information units weights
+data graph clustering nodes set tree number cluster node clusters two graphs points algorithm based
+data matrix distribution gaussian log models using variables methods method estimation sparse inference sample likelihood

@@ -1,0 +1,10 @@
+model time models distribution parameters inference process figure one gaussian two bayesian prior function mean
+image model images features training feature recognition object layer deep classification using network figure networks
+data mixture using density points dimensional gaussian variational method graph set methods log estimation space
+network neural input neurons system figure time neuron signal response output units spike state activity
+data using training model used two figure one speech learning different test source neural models
+algorithm function optimization problem theorem gradient bound convex algorithms let linear loss error functions convergence
+state policy algorithm value optimal function action regret reward decision states problem agent time actions
+matrix kernel algorithm graph points clustering data method problem distance class classification methods set kernels
+learning set using number use based one training performance approach also data given machine results
+set number one learning results error given topic used two using also function size first

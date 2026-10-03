@@ -1,0 +1,10 @@
+image images object objects word segmentation convolutional pixel scene pixels language video deep lda unsupervised
+theorem convex bounds lemma regret proof risk norm guarantees bounded minimization rank dual inequality bound
+eigenvectors principal proximal svd singular pca laplacian eigenvalue lasso orthogonal measurements shrinkage nonconvex sensing diag
+perception tracking cognitive surface motion connectionist perceptual saliency cues rotation grammar gaze verb deformation tracker
+model models network neural networks input inference output system process likelihood hidden bayesian prior task
+marginals vertex vertices clusters protein gene graphs message partitions graphical cut edges passing assignment independence
+policy reward agent reinforcement policies arm agents planning mdp rewards exploration actions player games controller
+spike stimulus synaptic firing cortex cortical spikes synapses neuron spiking auditory neuronal neurons sensory stimuli
+speaker speech analog hmm chip separation mlp nets bit acoustic phoneme perceptrons ica phonetic acoustics
+pac price learner losses perceptron adversary hypotheses adaboost erm disagreement learnability crowdsourcing warmuth lugosi freund

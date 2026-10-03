@@ -1,0 +1,10 @@
+policy reward dynamics agent actions reinforcement action policies trajectory exploration environment agents planning trajectories control
+camera texture tracking rotation appearance motion contour contours rigid occlusion clutter stereo segmentations saliency blur
+image images recognition object deep convolutional objects layers pixel scene pixels segmentation vision discriminative trained
+spike synaptic firing cortical spikes cortex stimulus synapses spiking auditory neuronal stimuli excitatory inhibitory neuroscience
+eigenvectors laplacian manifold pca eigenvalue nmf mds amp isomap belkin dissimilarities niyogi submatrix donoho microarray
+revenue prices disagreement kleinberg hoeffding dom balcan mab reuters reserve markets queried market lazy smo
+regret risk convex submodular bounds lemma bandit inequality dual oracle corollary norm minimax minimization guarantees
+analog chip phonetic vowel giles lippmann waibel elman spectrogram smolensky vowels alspector massively bourlard shavlik
+gaussian posterior covariance variational density clustering likelihood graphical bayesian marginal graph mixture clusters cluster graphs
+ais opper ylx doucet yedidia frequentist heckerman saad resample integrand forecast lauritzen sollich razor ihler

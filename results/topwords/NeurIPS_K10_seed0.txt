@@ -1,0 +1,10 @@
+synapses chip synaptic circuit spiking voltage spikes excitatory inhibitory analog membrane synapse circuits inhibition plasticity
+image images deep object convolutional recognition scene segmentation video objects discriminative semantic face cvpr labeled
+bayesian posterior graphical variational gibbs marginal dirichlet likelihood mixture clusters covariance clustering cluster inference graphs
+patient plant observers finger discontinuities blood climbing motions kinematics kinematic commands leg lane healthy infants
+speech speaker audio acoustic grammar hmm music phoneme speakers grammars phone phonetic utterances utterance vowel
+proximal lasso boosting svrg nesterov prox erm cand nonsmooth conic rip tsybakov kwk nystr representer
+policy policies bandit games player mdp rewards agents game agent exploration planning reward actions arm
+convex bounds lemma proof risk theorem norm online greedy bounded bound dual minimization inequality submodular
+neurons stimulus activity brain cells cortex stimuli neuron signals responses spike motor cell response dynamics
+treewidth unweighted saad lauritzen ylx subgraphs voronoi darwiche newsgroup meila yedidia satisfiability sollich blockmodels kondor

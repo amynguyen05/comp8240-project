@@ -1,0 +1,10 @@
+bayesian posterior markov variational graphical belief likelihood marginal gibbs inference carlo monte chain dirichlet mixture
+classifier labels classifiers labeled unlabeled discriminative semantic cvpr categories similarity embedding segmentation word category object
+linkage pea amino anomalous haar affinities memberships acid acids judgment ambiguities buhmann weinshall judgements groupings
+speaker speech nets phoneme speakers perceptrons phone phonetic utterances vowel utterance spoken handwriting recognizer cun
+policy regret reward agent policies bandit agents games player planning mdp rewards game exploration actions
+units motion recurrent brain network signals activation temporal frequency connections filters responses patterns activity spatial
+convex norm lemma theorem risk dual minimization rank proof bounds lasso submodular optimization min convergence
+bethe opper titsias mrfs tipping semiparametric doucet pitman elliptical ylx dunson bmc bivariate heteroscedastic ihler
+svrg erm nystr conic nonsmooth tsybakov minx smo ghaoui lov asz sketching fenchel negahban representer
+synaptic firing spikes spike synapses spiking voltage cortical neuronal excitatory inhibitory circuit membrane synapse auditory
