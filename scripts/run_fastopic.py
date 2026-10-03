@@ -56,6 +56,9 @@ def main():
     parser.add_argument("--seeds", type=int, nargs="+", default=[0, 1, 2, 3, 4])
     parser.add_argument("--epochs", type=int, default=200)
     parser.add_argument("--out", default="results/fastopic_original.csv")
+    parser.add_argument(
+        "--no-etp", action="store_true", help="ablation: softmax instead of ETP"
+    )
     args = parser.parse_args()
 
     data = load(args.dataset)
@@ -72,6 +75,7 @@ def main():
     topwords_dir = RESULTS_DIR / "topwords"
     topwords_dir.mkdir(parents=True, exist_ok=True)
     out_csv = Path(args.out)
+    label = args.dataset + ("-noETP" if args.no_etp else "")
     new_file = not out_csv.exists()
 
     for seed in args.seeds:
@@ -82,6 +86,11 @@ def main():
             num_top_words=15,
             device="cpu",
         )
+
+        if args.no_etp:
+            from fastopic_no_etp import FastopicNoETP
+
+            model.model = FastopicNoETP(args.k)
 
         start = time.time()
         top_words, train_theta = model.fit_transform(
@@ -94,12 +103,12 @@ def main():
         test_theta = model.transform(doc_embeddings=torch.as_tensor(test_emb))
 
         # Top words saved so CV can be computed later without retraining.
-        (topwords_dir / f"{args.dataset}_K{args.k}_seed{seed}.txt").write_text(
+        (topwords_dir / f"{label}_K{args.k}_seed{seed}.txt").write_text(
             "\n".join(top_words)
         )
 
         row = {
-            "dataset": args.dataset,
+            "dataset": label,
             "K": args.k,
             "seed": seed,
             "TD": _diversity(top_words),
