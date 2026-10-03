@@ -17,6 +17,16 @@ SECTIONS = [
     "environment",
     "culture",
     "technology",
+    "world",
+    "football",
+    "music",
+    "film",
+    "books",
+    "tv-and-radio",
+    "stage",
+    "artanddesign",
+    "food",
+    "lifeandstyle",
 ]
 
 
