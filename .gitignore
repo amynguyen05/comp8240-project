@@ -5,3 +5,4 @@ FASTopic/
 *.npy
 __pycache__/
 palmetto/
+results/theta/

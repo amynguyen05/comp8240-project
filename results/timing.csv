@@ -1,0 +1,2 @@
+dataset,K,seed,TD,Purity,NMI,Acc,F1,train_s,embed_s
+Wikitext-103,50,0,0.9986666666666667,,,,,527.3,202.3

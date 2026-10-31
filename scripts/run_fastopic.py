@@ -59,6 +59,17 @@ def main():
     parser.add_argument(
         "--no-etp", action="store_true", help="ablation: softmax instead of ETP"
     )
+    parser.add_argument(
+        "--save-theta",
+        action="store_true",
+        help="save topic mixes + topic-word weights",
+    )
+    parser.add_argument(
+        "--tag", default="", help="suffix for diagnostic runs, e.g. -tau2"
+    )
+    parser.add_argument(
+        "--temp", type=float, default=1.0, help="softmax temperature for --no-etp"
+    )
     args = parser.parse_args()
 
     data = load(args.dataset)
@@ -75,7 +86,7 @@ def main():
     topwords_dir = RESULTS_DIR / "topwords"
     topwords_dir.mkdir(parents=True, exist_ok=True)
     out_csv = Path(args.out)
-    label = args.dataset + ("-noETP" if args.no_etp else "")
+    label = args.dataset + ("-noETP" if args.no_etp else "") + args.tag
     new_file = not out_csv.exists()
 
     for seed in args.seeds:
@@ -90,7 +101,7 @@ def main():
         if args.no_etp:
             from fastopic_no_etp import FastopicNoETP
 
-            model.model = FastopicNoETP(args.k)
+            model.model = FastopicNoETP(args.k, theta_temp=args.temp)
 
         start = time.time()
         top_words, train_theta = model.fit_transform(
@@ -106,6 +117,16 @@ def main():
         (topwords_dir / f"{label}_K{args.k}_seed{seed}.txt").write_text(
             "\n".join(top_words)
         )
+
+        if args.save_theta:
+            (RESULTS_DIR / "theta").mkdir(exist_ok=True)
+            np.savez_compressed(
+                RESULTS_DIR / "theta" / f"{label}_K{args.k}_seed{seed}.npz",
+                train_theta=np.asarray(train_theta, dtype=np.float32),
+                test_theta=np.asarray(test_theta, dtype=np.float32),
+                beta=model.get_beta().astype(np.float32),
+                vocab=np.array(model.vocab),
+            )
 
         row = {
             "dataset": label,
