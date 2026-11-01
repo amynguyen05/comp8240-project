@@ -8,7 +8,7 @@ from scipy.stats import entropy
 from sklearn import metrics
 from sklearn.svm import SVC
 
-THETA, DATA = Path("results/theta"), Path("datasets")
+THETA, DATA, OUT = Path("results/theta"), Path("datasets"), Path("results/diagnostics")
 
 
 def labels(name, split):
@@ -46,6 +46,9 @@ def f1(names):
                 }
             )
         )
+    OUT.mkdir(parents=True, exist_ok=True)
+    pd.DataFrame(rows).to_csv(OUT / "f1_by_seed.csv", index=False)
+    pd.concat(per_class).to_csv(OUT / "f1_per_class.csv", index=False)
     print(
         pd.DataFrame(rows)
         .groupby("dataset")
@@ -82,7 +85,10 @@ def nmi(name, ks):
                     / len(y),
                 }
             )
-    print(pd.DataFrame(rows).groupby("K").mean().round(3).to_string())
+    OUT.mkdir(parents=True, exist_ok=True)
+    table = pd.DataFrame(rows).groupby("K").mean().round(3)
+    table.to_csv(OUT / f"nmi_{name}.csv")
+    print(table.to_string())
     print(
         "\nIf MI stays flat while H(clusters) grows, NMI falls only because the denominator grows."
     )
@@ -108,7 +114,10 @@ def vocab():
                     "% vocab in <5 docs": 100 * np.mean([c < 5 for c in df.values()]),
                 }
             )
-    print(pd.DataFrame(rows).groupby("V").mean().round(2).to_string())
+    OUT.mkdir(parents=True, exist_ok=True)
+    table = pd.DataFrame(rows).groupby("V").mean().round(2)
+    table.to_csv(OUT / "vocab_DBpedia.csv")
+    print(table.to_string())
     print(
         "\nIf top words get rarer as V grows, topics stay 'diverse' by using rare, specific words."
     )

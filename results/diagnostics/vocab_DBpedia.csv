@@ -1,0 +1,5 @@
+V,median doc freq of top words,% top words in <5 docs,% vocab in <5 docs
+20000,19.0,28.11,70.3
+30000,15.2,30.61,80.28
+40000,13.7,27.92,85.24
+50000,12.1,27.79,86.59
