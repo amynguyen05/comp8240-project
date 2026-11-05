@@ -147,7 +147,7 @@ Open the three notebooks in `notebooks/` and run them top to bottom. They only r
   year      = {2024}
 }
 ```
-```bitex
+```bibtex
 @inproceedings{roeder2015palmetto,
     title = {{Exploring the Space of Topic Coherence Measures}},
     author = {R\"{o}der, Michael and Both, Andreas and Hinneburg, Alexander},
