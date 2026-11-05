@@ -147,7 +147,7 @@ Open the three notebooks in `notebooks/` and run them top to bottom. They only r
   year      = {2024}
 }
 ```
-```
+```bitex
 @inproceedings{roeder2015palmetto,
     title = {{Exploring the Space of Topic Coherence Measures}},
     author = {R\"{o}der, Michael and Both, Andreas and Hinneburg, Alexander},
@@ -165,7 +165,7 @@ Open the three notebooks in `notebooks/` and run them top to bottom. They only r
     series = {WSDM '15}
 }
 ```
-```
+```bibtex
 @inproceedings{wu2024topmost,
     title = "Towards the {T}op{M}ost: A Topic Modeling System Toolkit",
     author = "Wu, Xiaobao  and Pan, Fengjun  and Luu, Anh Tuan",
